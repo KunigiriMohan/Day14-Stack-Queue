@@ -18,31 +18,21 @@ class LinkedList {
         }
     }
 
-    /*
-     *
-     * pop() method for removing top element present in Stack.
-     * */
-    public void pop(){
-        Node temp = head;
-        if (temp ==null)
+    public void enQueue(int data){
+        Node temp = new  Node(data);
+        if (head == null)
         {
-            System.out.println("Stack does not contain any elements");
+            head=temp;
         }
         else
         {
-            head=head.next;
-
+            Node temp1=head;
+            while(temp1.next!=null)
+            {
+                temp1=temp1.next;
+            }
+            temp1.next=temp;
         }
-    }
-    /*
-     * peek() method to get top value from stack
-     * */
-    public int peek(){
-        Node temp = head;
-        if(temp== null){
-            System.out.println("Stack does not contain any elements");
-        }
-        return head.data;
     }
     /*
      * show() method to show elements present in Linked List
