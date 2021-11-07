@@ -2,8 +2,9 @@ class LinkedList {
 
     Node head;
     Node tail;
+
     /*
-     * push() method to push elements to Nodes in linked list
+     * add() method to push elements to Nodes in linked list
      * */
     public void add(int data) {
         Node newNode = new Node(data);      //Creating new node
@@ -15,6 +16,33 @@ class LinkedList {
             newNode.next = head;
             head = newNode;
         }
+    }
+
+    /*
+     *
+     * pop() method for removing top element present in Stack.
+     * */
+    public void pop(){
+        Node temp = head;
+        if (temp ==null)
+        {
+            System.out.println("Stack does not contain any elements");
+        }
+        else
+        {
+            head=head.next;
+
+        }
+    }
+    /*
+     * peek() method to get top value from stack
+     * */
+    public int peek(){
+        Node temp = head;
+        if(temp== null){
+            System.out.println("Stack does not contain any elements");
+        }
+        return head.data;
     }
     /*
      * show() method to show elements present in Linked List
