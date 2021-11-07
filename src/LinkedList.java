@@ -4,29 +4,18 @@ class LinkedList {
     Node tail;
 
     /*
-     * add() method to push elements to Nodes in linked list
-     * */
-    public void add(int data) {
-        Node newNode = new Node(data);      //Creating new node
-        if (head == null) {
-            head = newNode;
-            tail = newNode;
-        }
-        else {
-            newNode.next = head;
-            head = newNode;
-        }
-    }
+    *enQueue() method to add elements to Queue
+    */
 
     public void enQueue(int data){
         Node temp = new  Node(data);
-        if (head == null)
+        if (head == null)                           //Checking any elements ar in Queue or not
         {
-            head=temp;
+            head=temp;                              //if any value not present in Queue declare head inserted element as head
         }
         else
         {
-            Node temp1=head;
+            Node temp1=head;                        //if any values present add ing elements to queue
             while(temp1.next!=null)
             {
                 temp1=temp1.next;
