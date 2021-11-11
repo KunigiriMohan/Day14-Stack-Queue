@@ -2,20 +2,29 @@ class LinkedList {
 
     Node head;
     Node tail;
-
     /*
-     * add() method to push elements to Nodes in linked list
+     * deQueue() method to remove element from first
      * */
-    public void add(int data) {
-        Node newNode = new Node(data);      //Creating new node
-        if (head == null) {
-            head = newNode;
-            tail = newNode;
+    public int deQueue(){
+        if(head == null)
+        {
+            System.out.println("No elements in Queue");
         }
-        else {
-            newNode.next = head;
-            head = newNode;
+        else if(head != null)
+        {
+            Node temp1=head;
+            while(temp1.next.next!=tail)
+            {
+                temp1=temp1.next;
+            }
+            tail=temp1;
+            tail.next=null;
         }
+        else
+        {
+            head =tail=null;
+        }
+        return tail.data;
     }
 
     public void enQueue(int data){
@@ -41,8 +50,11 @@ class LinkedList {
         Node temp = head;
         if (head == null) {
             System.out.println("Linked List is Empty");
-        } else {
-            while (temp != null) {
+        }
+        else
+        {
+            while (temp != null)
+            {
                 System.out.print(temp.data + " ");
                 temp = temp.next;
             }
