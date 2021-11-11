@@ -2,20 +2,40 @@ class LinkedList {
 
     Node head;
     Node tail;
-
     /*
-    *enQueue() method to add elements to Queue
-    */
-
-    public void enQueue(int data){
-        Node temp = new  Node(data);
-        if (head == null)                           //Checking any elements ar in Queue or not
+     * deQueue() method to remove element from first
+     * */
+    public int deQueue(){
+        if(head == null)
         {
-            head=temp;                              //if any value not present in Queue declare head inserted element as head
+            System.out.println("No elements in Queue");
+        }
+        else if(head != null)
+        {
+            Node temp1=head;
+            while(temp1.next.next!=tail)
+            {
+                temp1=temp1.next;
+            }
+            tail=temp1;
+            tail.next=null;
         }
         else
         {
-            Node temp1=head;                        //if any values present add ing elements to queue
+            head =tail=null;
+        }
+        return tail.data;
+    }
+
+    public void enQueue(int data){
+        Node temp = new  Node(data);
+        if (head == null)
+        {
+            head=temp;
+        }
+        else
+        {
+            Node temp1=head;
             while(temp1.next!=null)
             {
                 temp1=temp1.next;
@@ -30,8 +50,11 @@ class LinkedList {
         Node temp = head;
         if (head == null) {
             System.out.println("Linked List is Empty");
-        } else {
-            while (temp != null) {
+        }
+        else
+        {
+            while (temp != null)
+            {
                 System.out.print(temp.data + " ");
                 temp = temp.next;
             }

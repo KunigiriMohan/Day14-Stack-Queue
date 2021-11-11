@@ -1,10 +1,15 @@
 public class Queue {
     public static void main(String[] args){
-        LinkedList list= new LinkedList();          // creating object of Linked List
-        list.enQueue(56);                           //Inserting values in Linked list
-        list.enQueue(30);
+        LinkedList list= new LinkedList();
+        list.enQueue(56);
+        list.enQueue(30);                       //pushing of elements to queue
         list.enQueue(70);
         System.out.print("Elements in the Queue are :  ");
-        list.show();                                //printing values in LInked List
+        list.show();                                    //showing elements after pushing
+        //System.out.println(list.deQueue());
+        System.out.println();
+        list.deQueue();                                     //calling deQueue method to dequeue elements in queue
+        System.out.println("After deQueue of elements in Queue ");
+        list.show();                                    //printing elemnts in queue after dequeue
     }
 }
